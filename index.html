@@ -761,24 +761,26 @@ class="w-full h-full object-cover">
     <script>
         AOS.init({ duration: 1000, once: true, easing: 'ease-out-expo' });
 
-        document.getElementById('seuseungnimForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const modal = document.createElement('div');
-            modal.className = 'fixed inset-0 bg-black/80 backdrop-blur-md z-[2000] flex items-center justify-center p-6';
-            modal.innerHTML = `
-                <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl text-center max-w-sm w-full border-4 border-orange-primary animate-in zoom-in duration-300">
-                    <div class="w-20 h-20 bg-orange-50 text-orange-primary rounded-full flex items-center justify-center mx-auto mb-8 text-4xl">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <h3 class="text-3xl font-black mb-4 tracking-tighter italic uppercase">Complete</h3>
-                    <p class="text-gray-400 font-bold leading-relaxed mb-10">
-                        스승님 전문 담당자가 확인 후<br>신속하게 안내 연락을 드리겠습니다.
-                    </p>
-                    <button onclick="this.closest('.fixed').remove()" class="w-full bg-gray-900 text-white py-4 rounded-[2.5rem] font-black shadow-lg italic uppercase tracking-widest">확인</button>
-                </div>
-            `;
-            document.body.appendChild(modal);
-        });
+        document.getElementById('seuseungnimForm').addEventListener('submit', function() {
+
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black/80 backdrop-blur-md z-[2000] flex items-center justify-center p-6';
+
+    modal.innerHTML = `
+        <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl text-center max-w-sm w-full border-4 border-orange-primary">
+            <div class="w-20 h-20 bg-orange-50 text-orange-primary rounded-full flex items-center justify-center mx-auto mb-8 text-4xl">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3 class="text-3xl font-black mb-4 tracking-tighter italic uppercase">Complete</h3>
+            <p class="text-gray-400 font-bold leading-relaxed mb-10">
+                스승님 전문 담당자가 확인 후<br>신속하게 안내 연락을 드리겠습니다.
+            </p>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+});
 
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -791,6 +793,7 @@ class="w-full h-full object-cover">
     </script>
 </body>
 </html>
+
 
 
 
