@@ -54,21 +54,39 @@
 
         /* Floating Chat Button */
         .chat-btn {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            background: #FAE100; /* KakaoTalk Yellow */
-            color: #3C1E1E;
-            padding: 12px 20px;
-            border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            font-weight: 900;
-            transition: all 0.3s ease;
-        }
-        .chat-btn:hover { transform: scale(1.05); }
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: #FAE100; /* KakaoTalk Yellow */
+    color: #3C1E1E;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-weight: 900;
+    transition: transform 0.3s ease;
+}
+
+/* PC hover */
+.chat-btn:hover {
+    transform: scale(1.05);
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    .chat-btn {
+        left: 50%;
+        right: auto;
+        bottom: 110px;
+        transform: translateX(-50%);
+    }
+
+    .chat-btn:hover {
+        transform: translateX(-50%) scale(1.05);
+    }
+}
     </style>
 </head>
 <body class="text-gray-900 overflow-x-hidden">
@@ -863,6 +881,7 @@ alert("링크가 복사되었습니다!");
     </script>
 </body>
 </html>
+
 
 
 
