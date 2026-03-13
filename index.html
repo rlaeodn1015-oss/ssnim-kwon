@@ -787,13 +787,28 @@ class="w-full h-full object-cover">
     </footer>
 
     <!-- Fixed Bottom Mobile Action -->
-    <div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-lg border-t border-gray-100 p-5 z-[100] md:hidden flex items-center justify-between px-10 shadow-2xl">
-        <div class="flex flex-col">
-            <span class="text-[10px] font-black text-orange-primary tracking-widest uppercase italic">Limited Slot</span>
-            <span class="font-black text-gray-900 tracking-tighter italic">마스터 클래스 신청</span>
-        </div>
-        <a href="#register" class="bg-gray-900 text-white px-8 py-4 rounded-2xl font-black shadow-lg italic uppercase text-sm tracking-widest">Reserve</a>
+<div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-lg border-t border-gray-100 p-5 z-[100] md:hidden flex items-center justify-between px-6 shadow-2xl">
+
+    <div class="flex flex-col">
+        <span class="text-[10px] font-black text-orange-primary tracking-widest uppercase italic">Limited Slot</span>
+        <span class="font-black text-gray-900 tracking-tighter italic">마스터 클래스 신청</span>
     </div>
+
+    <div class="flex gap-2">
+
+        <button onclick="sharePage()"
+        class="bg-white border border-gray-300 px-4 py-4 rounded-2xl font-black text-sm shadow-md">
+        친구에게 공유
+        </button>
+
+        <a href="#register"
+        class="bg-gray-900 text-white px-8 py-4 rounded-2xl font-black shadow-lg italic uppercase text-sm tracking-widest">
+        Reserve
+        </a>
+
+    </div>
+
+</div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -828,9 +843,27 @@ class="w-full h-full object-cover">
                 header.classList.remove('shadow-md');
             }
         });
+
+        function sharePage() {
+
+const shareData = {
+title: "스승님 숏게임 마스터 클래스",
+text: "권두욱 프로와 함께하는 3시간 숏게임 마스터 레슨",
+url: window.location.href
+};
+
+if (navigator.share) {
+navigator.share(shareData);
+} else {
+navigator.clipboard.writeText(window.location.href);
+alert("링크가 복사되었습니다!");
+}
+
+}
     </script>
 </body>
 </html>
+
 
 
 
