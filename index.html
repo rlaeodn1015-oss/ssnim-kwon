@@ -55,8 +55,8 @@
         /* Floating Chat Button */
         .chat-btn {
     position: fixed;
-    bottom: 100px;
-    right: 20px;
+    bottom: 90px;
+    right: 16px;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -77,12 +77,12 @@
 /* 모바일 최적화 */
 @media (max-width: 768px) {
     .chat-btn {
-        left: 50%;
-        right: auto;
-        bottom: 110px;
-        transform: translateX(-50%);
+        right: 16px;
+        left: auto;
+        bottom: 90px;
+        transform: none;
     }
-
+}
     .chat-btn:hover {
         transform: translateX(-50%) scale(1.05);
     }
@@ -805,22 +805,22 @@ class="w-full h-full object-cover">
     </footer>
 
     <!-- Fixed Bottom Mobile Action -->
-<div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-lg border-t border-gray-100 p-5 z-[100] md:hidden flex items-center justify-between px-6 shadow-2xl">
+<div class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-lg border-t border-gray-100 py-4 px-4 z-[100] md:hidden flex items-center justify-between gap-3 shadow-2xl">
 
     <div class="flex flex-col">
         <span class="text-[10px] font-black text-orange-primary tracking-widest uppercase italic">Limited Slot</span>
-        <span class="font-black text-gray-900 tracking-tighter italic">마스터 클래스 신청</span>
+        <span class="font-black text-gray-900 tracking-tighter italic">지금 레슨 신청</span>
     </div>
 
     <div class="flex gap-2">
 
         <button onclick="sharePage()"
-        class="bg-white border border-gray-300 px-4 py-4 rounded-2xl font-black text-sm shadow-md">
+class="bg-white border border-gray-300 px-3 py-3 rounded-2xl font-black text-sm shadow-md whitespace-nowrap">
         친구에게 공유
         </button>
 
         <a href="#register"
-        class="bg-gray-900 text-white px-8 py-4 rounded-2xl font-black shadow-lg italic uppercase text-sm tracking-widest">
+class="bg-gray-900 text-white px-6 py-3 rounded-2xl font-black shadow-lg italic uppercase text-sm whitespace-nowrap">
         Reserve
         </a>
 
@@ -881,6 +881,7 @@ alert("링크가 복사되었습니다!");
     </script>
 </body>
 </html>
+
 
 
 
