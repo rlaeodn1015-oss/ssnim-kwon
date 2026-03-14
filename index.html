@@ -8,18 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@800;900&display=swap');
-        
-        :root {
-            --primary: #FF8A00;
-            --dark: #1A1A1A;
-        }
+        <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@800;900&display=swap');
 
-        body { 
-            font-family: 'Noto Sans KR', sans-serif; 
-            word-break: keep-all;
-            background-color: #ffffff;
-        }
+    :root {
+        --primary: #FF8A00;
+        --dark: #1A1A1A;
+    }
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body { 
+        font-family: 'Noto Sans KR', sans-serif; 
+        word-break: keep-all;
+        background-color: #ffffff;
+    }
+
+</style>
 
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
         .bg-orange-primary { background-color: var(--primary); }
@@ -81,6 +88,7 @@
         left: auto;
         bottom: 90px;
         transform: none;
+        max-width: calc(100vw - 32px);  /* 핵심 */
     }
 }
     </style>
@@ -611,7 +619,7 @@ Outdoor
                 <div class="relative w-full max-w-md mx-auto">
 
                     <!-- background accent -->
-                    <div class="absolute -inset-4 bg-orange-primary/10 rounded-[3.5rem] rotate-3 -z-10"></div>
+                    <div class="absolute inset-0 bg-orange-primary/10 rounded-[3.5rem] rotate-3 -z-10"></div>
 
                     <!-- image card -->
                     <div class="aspect-[3/4] bg-white rounded-[3rem] overflow-hidden shadow-2xl">
@@ -623,7 +631,7 @@ class="w-full h-full object-cover">
                     </div>
 
                     <!-- name badge -->
-                    <div class="absolute -bottom-6 -right-6 p-8 glass-card rounded-3xl shadow-xl">
+                    <div class="absolute -bottom-6 right-6 p-8 glass-card rounded-3xl shadow-xl">
                         <p class="text-orange-primary font-black italic text-xs mb-1 uppercase tracking-widest">
                             Master Class A
                         </p>
@@ -1002,16 +1010,13 @@ class="bg-gray-900 text-white px-6 py-3 rounded-2xl font-black shadow-lg italic 
         function sharePage() {
 
 const shareData = {
-title: "스승님 숏게임 마스터 클래스",
-text: "권두욱 프로와 함께하는 3시간 숏게임 마스터 레슨",
+title: "권두욱스승 '핀 디렉터' 마스터 실전 레슨",
+text: "권두욱스승님과 함께하는 3시간 "핀 디렉터" 마스터 실전 레슨",
 url: window.location.href
 };
 
 if (navigator.share) {
 navigator.share(shareData);
-} else {
-navigator.clipboard.writeText(window.location.href);
-alert("링크가 복사되었습니다!");
 }
 
 }
