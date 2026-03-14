@@ -1018,13 +1018,12 @@ url: window.location.href
 
 if (navigator.share) {
 
-navigator.share(shareData).catch(() => {
-navigator.clipboard.writeText(window.location.href);
-});
+navigator.share(shareData);
 
 } else {
 
 navigator.clipboard.writeText(window.location.href);
+alert("링크가 복사되었습니다.");
 
 }
 
