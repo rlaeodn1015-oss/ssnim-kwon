@@ -1017,7 +1017,15 @@ url: window.location.href
 };
 
 if (navigator.share) {
-navigator.share(shareData);
+
+navigator.share(shareData).catch(() => {
+navigator.clipboard.writeText(window.location.href);
+});
+
+} else {
+
+navigator.clipboard.writeText(window.location.href);
+
 }
 
 }
