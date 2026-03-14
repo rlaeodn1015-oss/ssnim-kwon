@@ -9,89 +9,90 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
         <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@800;900&display=swap');
 
-    :root {
-        --primary: #FF8A00;
-        --dark: #1A1A1A;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@800;900&display=swap');
 
-    html, body {
-        overflow-x: hidden;
-    }
+:root {
+--primary: #FF8A00;
+--dark: #1A1A1A;
+}
 
-    body { 
-        font-family: 'Noto Sans KR', sans-serif; 
-        word-break: keep-all;
-        background-color: #ffffff;
-    }
+html, body {
+overflow-x: hidden;
+}
+
+body {
+font-family: 'Noto Sans KR', sans-serif;
+word-break: keep-all;
+background-color: #ffffff;
+}
+
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+.bg-orange-primary { background-color: var(--primary); }
+.text-orange-primary { color: var(--primary); }
+
+html { scroll-behavior: smooth; }
+
+.hero-gradient {
+background: linear-gradient(135deg, #FF8A00 0%, #FF5C00 100%);
+}
+
+.glass-card {
+background: rgba(255,255,255,0.95);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255,255,255,0.2);
+}
+
+.price-card {
+transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.price-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 25px 50px -12px rgba(255,138,0,0.15);
+}
+
+@keyframes floating {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-15px); }
+100% { transform: translateY(0px); }
+}
+
+.animate-float {
+animation: floating 3s ease-in-out infinite;
+}
+
+.chat-btn {
+position: fixed;
+bottom: 90px;
+right: 16px;
+z-index: 1000;
+display: flex;
+align-items: center;
+background: #FAE100;
+color: #3C1E1E;
+padding: 12px 20px;
+border-radius: 50px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+font-weight: 900;
+transition: transform 0.3s ease;
+}
+
+.chat-btn:hover {
+transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+.chat-btn {
+right: 16px;
+left: auto;
+bottom: 90px;
+transform: none;
+max-width: calc(100vw - 32px);
+}
+}
 
 </style>
-
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
-        .bg-orange-primary { background-color: var(--primary); }
-        .text-orange-primary { color: var(--primary); }
-        
-        html { scroll-behavior: smooth; }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #FF8A00 0%, #FF5C00 100%);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .price-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .price-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(255, 138, 0, 0.15);
-        }
-
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float { animation: floating 3s ease-in-out infinite; }
-
-        /* Floating Chat Button */
-        .chat-btn {
-    position: fixed;
-    bottom: 90px;
-    right: 16px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    background: #FAE100; /* KakaoTalk Yellow */
-    color: #3C1E1E;
-    padding: 12px 20px;
-    border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    font-weight: 900;
-    transition: transform 0.3s ease;
-}
-
-/* PC hover */
-.chat-btn:hover {
-    transform: scale(1.05);
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .chat-btn {
-        right: 16px;
-        left: auto;
-        bottom: 90px;
-        transform: none;
-        max-width: calc(100vw - 32px);  /* 핵심 */
-    }
-}
-    </style>
 </head>
 <body class="text-gray-900 overflow-x-hidden">
 
